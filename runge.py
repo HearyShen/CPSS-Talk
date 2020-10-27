@@ -1,3 +1,9 @@
+"""
+Demo of Runge Phenomenon
+
+Author: HearyShen
+Date: 2020.10.28
+"""
 import matplotlib.pyplot as plt
 import numpy as np
 

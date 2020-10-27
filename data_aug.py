@@ -1,3 +1,9 @@
+"""
+Demo of Data Augmentation
+
+Author: HearyShen
+Date: 2020.10.28
+"""
 import os
 from PIL import Image
 
@@ -17,13 +23,13 @@ default_normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
 default_transforms = transforms.Compose(
     [transforms.Resize((224, 224)),
      transforms.ToTensor(),
-    #  default_normalize
+     #  default_normalize
      ])
 
 train_transforms = transforms.Compose(
     [transforms.RandomRotation(180),
-    #  transforms.RandomVerticalFlip(),
-    #  transforms.RandomHorizontalFlip(),
+     #  transforms.RandomVerticalFlip(),
+     #  transforms.RandomHorizontalFlip(),
      transforms.Resize((256, 256)),
      transforms.RandomCrop((224, 224)),
      transforms.ColorJitter(
@@ -44,11 +50,13 @@ def imshow(img):
     # plt.show()
 
 
-# flickr_root = r'D:\Datasets\Flickr30k\flickr30k_images'
-flickr_root = r'D:\Datasets\ForestrySecurity\insects98'
+# image_root = r'D:\Datasets\Flickr30k\flickr30k_images'
+# image_root = r'D:\Datasets\ForestrySecurity\insects98'
+# image_root = r'.\imgs\flickr'
+image_root = r'.\imgs\insects'
 
 
-for root, dirs, files in os.walk(flickr_root):
+for root, dirs, files in os.walk(image_root):
     for filename in files:
         if filename.split('.')[-1].lower() not in ('jpg', 'png'):
             continue
